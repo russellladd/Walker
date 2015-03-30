@@ -18,6 +18,16 @@ protocol OnWalkViewControllerDelegate: class {
 
 class OnWalkViewController: UIViewController {
     
+    // MARK: Initialization
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        stepCounter.startStepCountingUpdatesToQueue(NSOperationQueue.mainQueue(), updateOn: 1) { numberOfSteps, date, error in
+            self.numberOfSteps = numberOfSteps
+        }
+    }
+    
     // MARK: Model
     
     var context: NSManagedObjectContext!
@@ -46,10 +56,6 @@ class OnWalkViewController: UIViewController {
         super.viewDidLoad()
         
         updateNumberOfStepsLabel()
-        
-        stepCounter.startStepCountingUpdatesToQueue(NSOperationQueue.mainQueue(), updateOn: 1) { numberOfSteps, date, error in
-            self.numberOfSteps = numberOfSteps
-        }
     }
     
     private func updateNumberOfStepsLabel() {
@@ -98,6 +104,8 @@ class OnWalkViewController: UIViewController {
     
     @IBAction private func tapGestureRecognizerAction() {
         
-        numberOfSteps++
+        // Disabled because conflicts with step counter API
+        
+        //numberOfSteps++
     }
 }
