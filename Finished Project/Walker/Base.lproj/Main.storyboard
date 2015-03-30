@@ -41,7 +41,7 @@
         <!--On Walk-->
         <scene sceneID="hes-Wc-FY9">
             <objects>
-                <viewController id="A7U-f5-bnL" customClass="WalkViewController" customModule="Walker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="A7U-f5-bnL" customClass="OnWalkViewController" customModule="Walker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4FC-3O-3K1"/>
                         <viewControllerLayoutGuide type="bottom" id="v1o-I0-ER0"/>

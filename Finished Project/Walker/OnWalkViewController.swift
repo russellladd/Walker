@@ -60,17 +60,28 @@ class OnWalkViewController: UIViewController {
     
     @IBAction private func quitBarButtonItemAction() {
         
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
-        
-        alertController.addAction(UIAlertAction(title: NSLocalizedString("Continue Walk", comment: "Action sheet title"), style: .Default) { action in
-            // Do nothing
-        })
-        
-        alertController.addAction(UIAlertAction(title: NSLocalizedString("Quit", comment: "Action sheet title"), style: .Destructive) { action in
+        if numberOfSteps > 0 {
+            
+            let alertTitle = NSLocalizedString("Are you sure?", comment: "Alert title for quit confirmation")
+            
+            let alertMessage = "Steps for this walk will be lost."
+            
+            let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .Alert)
+            
+            alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel) { action in
+                // Do nothing
+            })
+            
+            alertController.addAction(UIAlertAction(title: "Quit", style: .Destructive) { action in
+                self.delegate!.onWalkViewControllerDidCancel()
+            })
+            
+            presentViewController(alertController, animated: true, completion: nil)
+            
+        } else {
+            
             self.delegate!.onWalkViewControllerDidCancel()
-        })
-        
-        presentViewController(alertController, animated: true, completion: nil)
+        }
     }
     
     @IBAction private func finishButtonDidTouchUpInside() {
