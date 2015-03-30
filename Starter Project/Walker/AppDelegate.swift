@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Walker
 //
-//  Created by Russell Ladd on 3/28/15.
+//  Created by Russell Ladd on 3/30/15.
 //  Copyright (c) 2015 GRL5. All rights reserved.
 //
 
@@ -22,3 +22,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 }
+
