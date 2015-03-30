@@ -17,7 +17,7 @@
 		46CA8B0A1AC780F2002029FC /* WalkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CA8B091AC780F2002029FC /* WalkerTests.swift */; };
 		46CA8B141AC785E5002029FC /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CA8B131AC785E5002029FC /* CircleView.swift */; };
 		46CA8B161AC78715002029FC /* Walk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CA8B151AC78715002029FC /* Walk.swift */; };
-		46CA8B1C1AC78973002029FC /* WalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CA8B1B1AC78973002029FC /* WalkViewController.swift */; };
+		46CA8B1C1AC78973002029FC /* OnWalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CA8B1B1AC78973002029FC /* OnWalkViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +45,7 @@
 		46CA8B091AC780F2002029FC /* WalkerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkerTests.swift; sourceTree = "<group>"; };
 		46CA8B131AC785E5002029FC /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		46CA8B151AC78715002029FC /* Walk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Walk.swift; sourceTree = "<group>"; };
-		46CA8B1B1AC78973002029FC /* WalkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkViewController.swift; sourceTree = "<group>"; };
+		46CA8B1B1AC78973002029FC /* OnWalkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnWalkViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +91,7 @@
 				46CA8B171AC7874C002029FC /* Model */,
 				46CA8B181AC78752002029FC /* View */,
 				46CA8AF51AC780F2002029FC /* MyWalksViewController.swift */,
-				46CA8B1B1AC78973002029FC /* WalkViewController.swift */,
+				46CA8B1B1AC78973002029FC /* OnWalkViewController.swift */,
 				46CA8AF71AC780F2002029FC /* Main.storyboard */,
 				46CA8AFA1AC780F2002029FC /* Images.xcassets */,
 				46CA8AFC1AC780F2002029FC /* LaunchScreen.xib */,
@@ -249,7 +249,7 @@
 				46A91BDE1AC8B08A003ACE92 /* Model.xcdatamodeld in Sources */,
 				46CA8AF41AC780F2002029FC /* AppDelegate.swift in Sources */,
 				4614F2F91AC79EC0001BA765 /* WalkCell.swift in Sources */,
-				46CA8B1C1AC78973002029FC /* WalkViewController.swift in Sources */,
+				46CA8B1C1AC78973002029FC /* OnWalkViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

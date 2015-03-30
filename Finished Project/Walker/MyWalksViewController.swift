@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class MyWalksViewController: UIViewController, NSFetchedResultsControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, WalkViewControllerDelegate {
+class MyWalksViewController: UIViewController, NSFetchedResultsControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, OnWalkViewControllerDelegate {
     
     // MARK: Model
     
@@ -77,9 +77,9 @@ class MyWalksViewController: UIViewController, NSFetchedResultsControllerDelegat
             
         case "Start Walk":
             let navigationController = segue.destinationViewController as UINavigationController
-            let walkViewController = navigationController.viewControllers.first as WalkViewController
-            walkViewController.context = context
-            walkViewController.delegate = self
+            let onWalkViewController = navigationController.viewControllers.first as OnWalkViewController
+            onWalkViewController.context = context
+            onWalkViewController.delegate = self
             
         default:
             assertionFailure("Unknown segue identifier")
@@ -88,12 +88,12 @@ class MyWalksViewController: UIViewController, NSFetchedResultsControllerDelegat
     
     // MARK: Walk view controller delegate
     
-    func walkViewControllerDidCancel() {
+    func onWalkViewControllerDidCancel() {
         
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func walkViewController(walkViewController: WalkViewController, didFinishWithWalk walk: Walk) {
+    func onWalkViewController(onWalkViewController: OnWalkViewController, didFinishWithWalk walk: Walk) {
         
         dismissViewControllerAnimated(true, completion: nil)
     }

@@ -1,5 +1,5 @@
 //
-//  WalkViewController.swift
+//  OnWalkViewController.swift
 //  Walker
 //
 //  Created by Russell Ladd on 3/28/15.
@@ -10,13 +10,13 @@ import UIKit
 import CoreData
 import CoreMotion
 
-protocol WalkViewControllerDelegate: class {
+protocol OnWalkViewControllerDelegate: class {
     
-    func walkViewControllerDidCancel()
-    func walkViewController(walkViewController: WalkViewController, didFinishWithWalk walk: Walk)
+    func onWalkViewControllerDidCancel()
+    func onWalkViewController(onWalkViewController: OnWalkViewController, didFinishWithWalk walk: Walk)
 }
 
-class WalkViewController: UIViewController {
+class OnWalkViewController: UIViewController {
     
     // MARK: Model
     
@@ -36,7 +36,7 @@ class WalkViewController: UIViewController {
     
     // MARK: Delegate
     
-    weak var delegate: WalkViewControllerDelegate?
+    weak var delegate: OnWalkViewControllerDelegate?
     
     // MARK: View
     
@@ -67,7 +67,7 @@ class WalkViewController: UIViewController {
         })
         
         alertController.addAction(UIAlertAction(title: NSLocalizedString("Quit", comment: "Action sheet title"), style: .Destructive) { action in
-            self.delegate!.walkViewControllerDidCancel()
+            self.delegate!.onWalkViewControllerDidCancel()
         })
         
         presentViewController(alertController, animated: true, completion: nil)
@@ -82,7 +82,7 @@ class WalkViewController: UIViewController {
         
         context.save(nil)
         
-        self.delegate?.walkViewController(self, didFinishWithWalk: walk)
+        self.delegate!.onWalkViewController(self, didFinishWithWalk: walk)
     }
     
     @IBAction private func tapGestureRecognizerAction() {
