@@ -66,6 +66,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46A91C101AC8F939003ACE92 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				46CA8AF51AC780F2002029FC /* MyWalksViewController.swift */,
+				46CA8B1B1AC78973002029FC /* OnWalkViewController.swift */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
 		46CA8AE51AC780F2002029FC = {
 			isa = PBXGroup;
 			children = (
@@ -90,11 +99,10 @@
 				46CA8AF31AC780F2002029FC /* AppDelegate.swift */,
 				46CA8B171AC7874C002029FC /* Model */,
 				46CA8B181AC78752002029FC /* View */,
-				46CA8AF51AC780F2002029FC /* MyWalksViewController.swift */,
-				46CA8B1B1AC78973002029FC /* OnWalkViewController.swift */,
+				46A91C101AC8F939003ACE92 /* View Controller */,
 				46CA8AF71AC780F2002029FC /* Main.storyboard */,
-				46CA8AFA1AC780F2002029FC /* Images.xcassets */,
 				46CA8AFC1AC780F2002029FC /* LaunchScreen.xib */,
+				46CA8AFA1AC780F2002029FC /* Images.xcassets */,
 				46CA8AF11AC780F2002029FC /* Supporting Files */,
 			);
 			path = Walker;
