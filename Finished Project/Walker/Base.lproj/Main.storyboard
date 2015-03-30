@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WXr-YI-Yp5">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="E4H-u2-f6O">
+            <objects>
+                <navigationController id="WXr-YI-Yp5" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x1R-Ee-P9v">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="z3l-qx-ogo" kind="relationship" relationship="rootViewController" id="qU0-FD-2wG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0GR-33-STZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4" y="392"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pvX-za-VSt">
+            <objects>
+                <navigationController id="ooJ-7x-Imk" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vsg-9i-X5m">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="A7U-f5-bnL" kind="relationship" relationship="rootViewController" id="w62-YM-nu9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xCr-AG-j6s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1708" y="-374"/>
+        </scene>
+        <!--On Walk-->
+        <scene sceneID="hes-Wc-FY9">
+            <objects>
+                <viewController id="A7U-f5-bnL" customClass="WalkViewController" customModule="Walker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4FC-3O-3K1"/>
+                        <viewControllerLayoutGuide type="bottom" id="v1o-I0-ER0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hnb-BO-03s">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5F-oA-y28">
+                                <rect key="frame" x="256" y="547" width="88" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Finish Walk">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="finishButtonDidTouchUpInside" destination="A7U-f5-bnL" eventType="touchUpInside" id="D23-9H-RNg"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="2gY-aR-7QX" customClass="CircleView" customModule="Walker" customModuleProvider="target">
+                                <rect key="frame" x="160" y="160" width="280" height="280"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="10,000" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="4rR-dL-IQQ">
+                                        <rect key="frame" x="23" y="52" width="234" height="177"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="150"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="steps" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGf-Xs-4TT">
+                                        <rect key="frame" x="116" y="218" width="49" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="4rR-dL-IQQ" firstAttribute="baseline" secondItem="pGf-Xs-4TT" secondAttribute="baseline" constant="-40" id="6he-HM-4H3"/>
+                                    <constraint firstAttribute="centerX" secondItem="4rR-dL-IQQ" secondAttribute="centerX" id="6rH-DG-sS7"/>
+                                    <constraint firstAttribute="width" secondItem="4rR-dL-IQQ" secondAttribute="width" multiplier="1.2" id="9Kh-7Z-Mnq"/>
+                                    <constraint firstAttribute="centerY" secondItem="4rR-dL-IQQ" secondAttribute="centerY" id="DPR-CY-twt"/>
+                                    <constraint firstItem="pGf-Xs-4TT" firstAttribute="centerX" secondItem="4rR-dL-IQQ" secondAttribute="centerX" id="XDt-i4-7Nj"/>
+                                    <constraint firstAttribute="width" secondItem="2gY-aR-7QX" secondAttribute="height" multiplier="1:1" id="a6g-L4-T9t"/>
+                                    <constraint firstAttribute="width" constant="280" id="iEx-Y9-JLz"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="bms-gX-Nyd" appends="YES" id="h0a-oT-Acf"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="a5F-oA-y28" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2gY-aR-7QX" secondAttribute="bottom" constant="40" id="2lr-iq-Tix"/>
+                            <constraint firstAttribute="centerX" secondItem="2gY-aR-7QX" secondAttribute="centerX" id="Car-v9-BPd"/>
+                            <constraint firstAttribute="centerX" secondItem="2gY-aR-7QX" secondAttribute="centerX" priority="750" id="DPO-O0-o50"/>
+                            <constraint firstItem="2gY-aR-7QX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hnb-BO-03s" secondAttribute="leading" constant="40" id="Mhx-O1-dfM"/>
+                            <constraint firstAttribute="centerY" secondItem="2gY-aR-7QX" secondAttribute="centerY" priority="750" id="UYJ-aX-x4h"/>
+                            <constraint firstAttribute="centerY" secondItem="2gY-aR-7QX" secondAttribute="centerY" id="lWj-DE-Ozc"/>
+                            <constraint firstItem="v1o-I0-ER0" firstAttribute="top" secondItem="a5F-oA-y28" secondAttribute="bottom" constant="20" id="m5a-Pa-1PH"/>
+                            <constraint firstAttribute="centerX" secondItem="a5F-oA-y28" secondAttribute="centerX" id="mGn-14-1OA"/>
+                            <constraint firstAttribute="trailing" secondItem="2gY-aR-7QX" secondAttribute="trailing" priority="750" constant="40" id="q50-Is-lhG"/>
+                            <constraint firstItem="2gY-aR-7QX" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4FC-3O-3K1" secondAttribute="bottom" constant="40" id="uVE-yU-pey"/>
+                            <constraint firstItem="2gY-aR-7QX" firstAttribute="leading" secondItem="Hnb-BO-03s" secondAttribute="leading" priority="750" constant="40" id="x5f-X8-kTW"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2gY-aR-7QX" secondAttribute="trailing" constant="40" id="yX4-gW-Gw4"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="DPO-O0-o50"/>
+                                <exclude reference="Mhx-O1-dfM"/>
+                                <exclude reference="UYJ-aX-x4h"/>
+                                <exclude reference="q50-Is-lhG"/>
+                                <exclude reference="uVE-yU-pey"/>
+                                <exclude reference="x5f-X8-kTW"/>
+                                <exclude reference="yX4-gW-Gw4"/>
+                                <exclude reference="2lr-iq-Tix"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="On Walk" id="fC9-NI-4zX">
+                        <barButtonItem key="leftBarButtonItem" title="Quit" id="k1u-jw-kVg">
+                            <connections>
+                                <action selector="quitBarButtonItemAction" destination="A7U-f5-bnL" id="QNQ-Xj-ZPC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="numberOfStepsLabel" destination="4rR-dL-IQQ" id="O1y-bv-aHa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9mB-29-JzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="bms-gX-Nyd">
+                    <connections>
+                        <action selector="tapGestureRecognizerAction" destination="A7U-f5-bnL" id="yWm-Dk-yCY"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2600" y="-374"/>
+        </scene>
+        <!--My Walks-->
+        <scene sceneID="gk1-nu-laG">
+            <objects>
+                <viewController id="z3l-qx-ogo" customClass="MyWalksViewController" customModule="Walker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DKC-yh-cqq"/>
+                        <viewControllerLayoutGuide type="bottom" id="1NQ-BF-9A5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bUX-1F-Wd8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="efz-ji-BLj">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8OJ-C1-PZm">
+                                    <size key="itemSize" width="66" height="66"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Walk Cell" id="nRl-kk-Kby" customClass="WalkCell" customModule="Walker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="66" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eli-rf-SpZ" customClass="CircleView" customModule="Walker" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="66" height="66"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10K" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pi7-xh-ViR">
+                                                    <rect key="frame" x="15" y="21" width="36" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Eli-rf-SpZ" secondAttribute="bottom" id="398-AO-fh8"/>
+                                            <constraint firstAttribute="centerY" secondItem="pi7-xh-ViR" secondAttribute="centerY" id="3Ti-Cg-Bal"/>
+                                            <constraint firstAttribute="trailing" secondItem="Eli-rf-SpZ" secondAttribute="trailing" id="DMp-sd-D0n"/>
+                                            <constraint firstAttribute="centerX" secondItem="pi7-xh-ViR" secondAttribute="centerX" id="Hgr-Sf-gxA"/>
+                                            <constraint firstItem="Eli-rf-SpZ" firstAttribute="top" secondItem="nRl-kk-Kby" secondAttribute="top" id="WWb-5b-4gl"/>
+                                            <constraint firstItem="Eli-rf-SpZ" firstAttribute="leading" secondItem="nRl-kk-Kby" secondAttribute="leading" id="tKx-1F-lO2"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="circleView" destination="Eli-rf-SpZ" id="ZlR-2b-QzV"/>
+                                            <outlet property="numberOfStepsLabel" destination="pi7-xh-ViR" id="2ir-fH-a65"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="z3l-qx-ogo" id="TTU-Rh-lYj"/>
+                                    <outlet property="delegate" destination="z3l-qx-ogo" id="L35-7R-R0g"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Walks" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s2y-hf-1Hq">
+                                <rect key="frame" x="250" y="286" width="100" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="s2y-hf-1Hq" secondAttribute="centerY" id="EJk-xJ-Jza"/>
+                            <constraint firstAttribute="trailing" secondItem="efz-ji-BLj" secondAttribute="trailing" id="NbG-7X-zuE"/>
+                            <constraint firstItem="1NQ-BF-9A5" firstAttribute="top" secondItem="efz-ji-BLj" secondAttribute="bottom" id="UAw-Fd-4f9"/>
+                            <constraint firstItem="efz-ji-BLj" firstAttribute="leading" secondItem="bUX-1F-Wd8" secondAttribute="leading" id="qDu-fR-C0K"/>
+                            <constraint firstItem="efz-ji-BLj" firstAttribute="top" secondItem="bUX-1F-Wd8" secondAttribute="top" id="uSk-Dc-oGc"/>
+                            <constraint firstAttribute="centerX" secondItem="s2y-hf-1Hq" secondAttribute="centerX" id="yNQ-aO-1RR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Walks" id="ZEI-zC-YhW">
+                        <barButtonItem key="rightBarButtonItem" title="Start Walk" id="7aR-sL-Y9P">
+                            <connections>
+                                <segue destination="ooJ-7x-Imk" kind="presentation" identifier="Start Walk" id="FaC-eu-KCm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="efz-ji-BLj" id="u6d-Xy-0ta"/>
+                        <outlet property="noWalksLabel" destination="s2y-hf-1Hq" id="fVc-2t-PW1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="94u-5A-PFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="839" y="392"/>
+        </scene>
+    </scenes>
+</document>
