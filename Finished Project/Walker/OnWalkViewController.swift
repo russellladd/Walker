@@ -20,7 +20,7 @@ class OnWalkViewController: UIViewController {
     
     // MARK: Initialization
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         stepCounter.startStepCountingUpdatesToQueue(NSOperationQueue.mainQueue(), updateOn: 1) { numberOfSteps, date, error in
@@ -92,12 +92,15 @@ class OnWalkViewController: UIViewController {
     
     @IBAction private func finishButtonDidTouchUpInside() {
         
-        let walk = NSEntityDescription.insertNewObjectForEntityForName("Walk", inManagedObjectContext: context) as Walk
+        let walk = NSEntityDescription.insertNewObjectForEntityForName("Walk", inManagedObjectContext: context) as! Walk
         
         walk.date = date
         walk.numberOfSteps = numberOfSteps
         
-        context.save(nil)
+        do {
+            try context.save()
+        } catch _ {
+        }
         
         self.delegate!.onWalkViewController(self, didFinishWithWalk: walk)
     }

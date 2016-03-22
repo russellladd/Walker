@@ -24,21 +24,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: model)
         
-        let documentsURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first as NSURL
+        let documentsURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
         let storeURL = documentsURL.URLByAppendingPathComponent("Walks.data")
         
         let storeOptions = [NSInferMappingModelAutomaticallyOption: true, NSMigratePersistentStoresAutomaticallyOption: true]
         
-        var error: NSError?
-        persistentStoreCoordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: storeOptions, error: &error)
-        if let error = error { println(error) }
+        do {
+            try persistentStoreCoordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: storeOptions)
+        } catch {
+            print(error)
+            assertionFailure()
+        }
         
         let context = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
         
         context.persistentStoreCoordinator = persistentStoreCoordinator
         
-        let navigationController = window!.rootViewController as UINavigationController
-        let myWalksViewController = navigationController.viewControllers.first as MyWalksViewController
+        let navigationController = window!.rootViewController as! UINavigationController
+        let myWalksViewController = navigationController.viewControllers.first as! MyWalksViewController
         myWalksViewController.context = context
         
         return true

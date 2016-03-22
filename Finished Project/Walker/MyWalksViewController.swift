@@ -40,7 +40,10 @@ class MyWalksViewController: UIViewController, NSFetchedResultsControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchedResultsController.performFetch(nil)
+        do {
+            try fetchedResultsController.performFetch()
+        } catch _ {
+        }
         
         collectionView.reloadData()
         updateNoWalksLabelHidden()
@@ -58,9 +61,9 @@ class MyWalksViewController: UIViewController, NSFetchedResultsControllerDelegat
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Walk Cell", forIndexPath: indexPath) as WalkCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Walk Cell", forIndexPath: indexPath) as! WalkCell
         
-        let walk = fetchedResultsController.objectAtIndexPath(indexPath) as Walk
+        let walk = fetchedResultsController.objectAtIndexPath(indexPath) as! Walk
         
         cell.numberOfStepsLabel.text = walk.numberOfSteps.description
         
@@ -68,7 +71,7 @@ class MyWalksViewController: UIViewController, NSFetchedResultsControllerDelegat
         
         return cell
     }
-    
+
     // MARK: Segues
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -76,8 +79,8 @@ class MyWalksViewController: UIViewController, NSFetchedResultsControllerDelegat
         switch segue.identifier! {
             
         case "Start Walk":
-            let navigationController = segue.destinationViewController as UINavigationController
-            let onWalkViewController = navigationController.viewControllers.first as OnWalkViewController
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let onWalkViewController = navigationController.viewControllers.first as! OnWalkViewController
             onWalkViewController.context = context
             onWalkViewController.delegate = self
             
